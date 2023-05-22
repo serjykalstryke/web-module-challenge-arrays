@@ -162,6 +162,7 @@ function filterByWord(originalFlavors, flavorWord) {
       filteredArray.push(originalFlavors[i]);
     }
   }
+  return filteredArray;
 }
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
@@ -176,8 +177,16 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/) {
-  /*code here*/
+function getAverageWordLength(originalFlavors) {
+  let totalWords = 0;
+
+  for (let i = 0; i < originalFlavors.length; i++) {
+    let words = originalFlavors[i].split(" ");
+    totalWords += words.length;
+  }
+
+  let average = totalWords / originalFlavors.length;
+  return average;
 }
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
@@ -192,8 +201,28 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-function getRandomFlavors(/*code here*/) {
-  /*code here*/
+function getRandomFlavors(
+  originalFlavors,
+  newFlavors,
+  seasonalFlavors,
+  regionalFlavors
+) {
+  let randomFlavors = [];
+  let allFlavors = originalFlavors.concat(
+    newFlavors,
+    seasonalFlavors,
+    regionalFlavors
+  );
+
+  while (randomFlavors.length < 31) {
+    let randomIndex = Math.floor(Math.random() * allFlavors.length);
+    let randomFlavor = allFlavors[randomIndex];
+    if (!randomFlavors.includes(randomFlavor)) {
+      randomFlavors.push(randomFlavor);
+    }
+  }
+
+  return randomFlavors;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
