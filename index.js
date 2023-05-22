@@ -161,6 +161,7 @@ function filterByWord(originalFlavors, flavorWord) {
     if (originalFlavors[i].toLowerCase().includes(flavorWord.toLowerCase())) {
       filteredArray.push(array[i]);
     }
+  }
 }
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
