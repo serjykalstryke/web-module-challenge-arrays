@@ -46,9 +46,7 @@ Use the copy function below to do the following:
 */
 
 function copy(originalFlavors) {
-  const newArray = [];
-  originalFlavors.push(newArray);
-  return newArray;
+  return originalFlavors.slice();
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -83,6 +81,7 @@ Use the addFlavor function below to do the following:
 
 function addFlavor(originalFlavors, flavor) {
   originalFlavors.unshift(flavor);
+  return originalFlavors;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -98,6 +97,7 @@ Use the removeLastFlavor function below to do the following:
 
 function removeLastFlavor(originalFlavors) {
   originalFlavors.pop();
+  return originalFlavors;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -134,7 +134,7 @@ function removeFlavorByName(originalFlavors, name) {
   if (index > -1) {
     originalFlavors.splice(index, 1);
   }
-  return array;
+  return originalFlavors;
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -159,7 +159,7 @@ function filterByWord(originalFlavors, flavorWord) {
   let filteredArray = [];
   for (let i = 0; i < originalFlavors.length; i++) {
     if (originalFlavors[i].toLowerCase().includes(flavorWord.toLowerCase())) {
-      filteredArray.push(array[i]);
+      filteredArray.push(originalFlavors[i]);
     }
   }
 }
